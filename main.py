@@ -1,9 +1,15 @@
-from csv import DictReader
+from csv import DictReader, Dialect, QUOTE_MINIMAL
 from json import dumps
-from typing import List
+
+class MyDialect(Dialect):
+    quoting = QUOTE_MINIMAL
+    delimiter = ","
+    quotechar = '"'
+    lineterminator = "\n"
+    skipinitialspace = True
 
 def from_csv_to_json(csv: str) -> str:
-    reader: DictReader = DictReader(csv.split("\n"))
+    reader: DictReader = DictReader(csv.split("\n"), dialect=MyDialect)
     return dumps(list(reader))
 
 if __name__ == "__main__":
