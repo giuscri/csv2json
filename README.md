@@ -3,7 +3,7 @@
 Use the image deployed on [Docker Hub](https://hub.docker.com/repository/docker/giuscri/csv2json)
 
 ```
-$ docker run -i giuscri/csv2json < file.csv > file.json
+$ docker run -i giuscri/csv2json [-s <separator>] < file.csv > file.json
 ```
 
 # Example

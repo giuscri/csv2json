@@ -12,4 +12,4 @@ FROM python:alpine
 WORKDIR /app
 COPY --from=0 /app/main.py .
 
-CMD python main.py
+ENTRYPOINT ["python", "main.py"]
